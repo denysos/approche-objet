@@ -29,8 +29,27 @@ public class TestPersonne {
 //		pers2.adresse = adr2;
 
 		System.out.println("TestPersonne executé !!");
-		System.out.println(pers1);
-		System.out.println(pers2);
+//		System.out.println(pers1);
+//		System.out.println(pers2);
+		pers1.afficheNOMetPrenom();
+
+		String nvNom = "georges";
+		System.out.println("changement du nom avec : " + nvNom + " : ");
+		pers1.setterNom(nvNom);
+		pers1.afficheNOMetPrenom();
+		
+		String nvPrenom = "Denise";
+		System.out.println("changement du prenom avec : " + nvPrenom + " : ");
+		pers1.setterPrenom(nvPrenom);
+		pers1.afficheNOMetPrenom();
+
+		System.out.println("adresse Denis : " + pers1.adresse );
+		pers1.setterAdresse(adr2);
+		System.out.println("nouvelle adresse Denis : " + pers1.adresse );
+
+		
+		
+		
 	}
 
 }
