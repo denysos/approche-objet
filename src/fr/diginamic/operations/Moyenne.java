@@ -12,17 +12,21 @@ public class Moyenne {
 	}
 
 	public double calcul() {
-
+		double total = 0;
 		if (tableau.length == 0) {
 			return 0;
 		}
-		return tableau[0];
+		
+		for (int i = 0; i < tableau.length; i++) {
+			total += tableau[i];
+		}
+		return total / tableau.length;
 	}
 
 	public double[] ajoute(double nouvelElement) {
-		double[] tableauFinal = Arrays.copyOf(tableau, tableau.length + 1);
-		tableauFinal[tableauFinal.length - 1] = nouvelElement;
-		return tableauFinal;
+		tableau = Arrays.copyOf(tableau, tableau.length + 1);
+		tableau[tableau.length - 1] = nouvelElement;
+		return tableau;
 	}
 
 }
