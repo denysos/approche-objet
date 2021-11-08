@@ -1,8 +1,14 @@
 package fr.diginamic.banque.entites;
 
+/**
+ * tp05 encapsulation
+ * @author denis
+ *
+ */
+
 public class Compte {
-	String numeroCompte;
-	float solde;
+	private String numeroCompte;
+	private float solde;
 	
 	public Compte(String numeroCompte, float solde) {
 		super();
