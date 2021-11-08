@@ -1,5 +1,11 @@
 package utils;
 
+/**
+ * tp 7-héritage-et-constructeur
+ * @author denis
+ *
+ */
+
 public class TestMethodeStatic {
 
 	public static void main(String[] args) {
