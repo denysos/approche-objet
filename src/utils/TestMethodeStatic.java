@@ -9,7 +9,7 @@ public class TestMethodeStatic {
 		int b = 15;
 		int max;
 		
-		entier = Integer.valueOf(chaine);
+		entier = Integer.valueOf(chaine);  // fait la même chose que parseInt()
 		max = Integer.max(a, b);
 		
 		System.out.println("cette chaine : \"" + chaine + "\" a été convertie en entier : " + entier);
