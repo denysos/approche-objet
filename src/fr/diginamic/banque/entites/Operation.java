@@ -3,6 +3,8 @@ package fr.diginamic.banque.entites;
 public abstract class Operation {
 	private String dateOperation;
 	private float montant;
+	static final String DEBIT = "DEBIT";
+	static final String CREDIT = "CREDIT";
 
 	public Operation(String dateOperation, float montant) {
 		super();
@@ -24,5 +26,5 @@ public abstract class Operation {
 	}
 
 	abstract String getType();
-	
+
 }

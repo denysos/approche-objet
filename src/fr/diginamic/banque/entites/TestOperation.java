@@ -1,8 +1,8 @@
 package fr.diginamic.banque.entites;
 
-
 /**
  * tp 8-héritage-et-méthodes-abstraites
+ * 
  * @author denis
  *
  */
@@ -30,11 +30,11 @@ public class TestOperation {
 		int signeOperation = 1;
 		for (int i = 0; i < tableau.length; i++) {
 
-			if (tableau[i].getType() == "DEBIT") {
+			if (tableau[i].getType() == Operation.DEBIT) {
 				signeOperation = -1;
 			}
 
-			if (tableau[i].getType() == "CREDIT") {
+			if (tableau[i].getType() == Operation.CREDIT) {
 				signeOperation = 1;
 			}
 

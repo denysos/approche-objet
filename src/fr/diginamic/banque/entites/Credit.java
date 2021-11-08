@@ -1,6 +1,7 @@
 package fr.diginamic.banque.entites;
 
 public class Credit extends Operation {
+	
 
 	public Credit(String dateOperation, float montant) {
 		super(dateOperation, montant);
@@ -14,7 +15,7 @@ public class Credit extends Operation {
 	
 	@Override
 	public String getType() {
-		return "CREDIT";
+		return CREDIT;
 		
 	}
 
