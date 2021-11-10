@@ -32,6 +32,15 @@ public class TestMaison {
 		System.out.println("superficie rdc de la maison : " + Double.toString(maison.superficieEtage(0)));
 		System.out.println("superficie 1er etage de la maison : " + Double.toString(maison.superficieEtage(1)));
 
+		// calcul de la superficie des pieces de même type
+		System.out.println("superficie totale des WC : " + maison.superficieTypeDePiece("WC"));
+		
+		// calcul du nombre de pieces d'un type donné
+		System.out.println("nombre total de WC : " + maison.nbParTypeDePiece("WC"));
+		System.out.println("nombre total de WC (class): " + maison.nbParTypeDePieceClass("Wc"));
+
+
+
 	}
 
 }
