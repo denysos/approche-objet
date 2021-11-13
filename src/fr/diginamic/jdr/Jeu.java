@@ -6,6 +6,8 @@ public class Jeu {
 
 	private Joueur joueur;
 	private JeuTirage tirage;
+//	private Combat combat;
+
 	static public int FORCE_MIN_JOUEUR = 12;
 	static public int FORCE_MAX_JOUEUR = 18;
 	static public int VIE_MIN_JOUEUR = 20;
@@ -21,18 +23,11 @@ public class Jeu {
 		return joueur;
 	}
 
-	public void combat(Personnage joueur, Personnage monstre) {
-		int degats = 0;
-		int attaqueJoueur = 0;
-		int attaqueMonstre = 0;
-		attaqueJoueur = joueur.getForce() + tirage.tirageJoueur();
-		attaqueMonstre = monstre.getForce() + tirage.tirageMonstre();
-		if (attaqueJoueur > attaqueMonstre) {
-			int pdv = monstre.getPointsDeVie();
-			degats = attaqueJoueur - attaqueMonstre;
-			monstre.blessure(degats);
-
-		}
+	public Personnage combat(Joueur joueur, Monstre monstre) {
+		Personnage vainqueur;
+		Combat combat = new Combat(joueur, monstre, this.tirage);
+		vainqueur = combat.executer();
+		return vainqueur;
 
 	}
 

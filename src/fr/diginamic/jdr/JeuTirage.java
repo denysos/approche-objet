@@ -9,20 +9,20 @@ public class JeuTirage {
 	}
 	
 	
-	static int tirageEntre2BornesIncluses(int min, int max){
+	 static int tirageEntre2BornesIncluses(int min, int max){
 		Random generateurAleatoire = new Random();
 		int alea ;
 			alea = min + generateurAleatoire.nextInt(max - min + 1);
 			return alea;
 		}
 	
-	static int tirageJoueur() {
-		return 10;
+	 int tirageJoueur() {
+		return 0;
 	}
 
 	
-	static int tirageMonstre() {
-		return 10;
+	 int tirageMonstre() {
+		return 0;
 	}
 	
 	

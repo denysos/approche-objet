@@ -18,8 +18,11 @@ public class EssaisJeu {
 //				
 //	
 		Joueur perso = new Joueur(15, 25);
-		Loup   monstre = new Loup(5, 10);
-		JeuTirage tirage = new JeuTirageTest();
+		Loup monstre = new Loup(5, 10);
+		int[] tirageJoueur = { 10 };
+		int[] tirageMonstre = { 10 };
+		JeuTirage tirage = new JeuTirageTest(tirageJoueur, tirageMonstre);
+//		JeuTirage tirage = new JeuTirageTest(10, 10);
 		Jeu jeu = new Jeu(perso, tirage);
 		jeu.combat(perso, monstre);
 

@@ -1,0 +1,121 @@
+
+
+exemples pour TDD jdr
+* Deroulement d'un combat
+
+attaque = force + alea(1-10)
+
+
+
+** DONE le monstre remporte le round :
+   testRoundcombatMonstreGagneRound()
+
+ | joueur   |         |     |        |   | monstre   | Troll   |     |        |
+ | force: 8 |         |     |        |   | force: 12 |         |     |        |
+ |----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ | tirage   | attaque | vie | degats |   | tirage    | attaque | vie | degats |
+ |----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ |          |         |   5 |        |   |           |         |  20 |        |
+ | 1        |       9 |  -4 |     -9 |   | 6         | 18      |  20 |        |
+ |----------+---------+-----+--------+---+-----------+---------+-----+--------|
+
+
+
+#+BEGIN_QUOTE  ANNULE -> pas d'égalité à gérer dans les tests !!!
+** CANCELLED +round nul : egalité entre le monstre et le joueur : :CANCELLED:
+  +testRoundcombatEgaliteRound()+
+ | joueur    |         |     |        |   | monstre   | Troll   |     |        |
+ | force: 15 |         |     |        |   | force: 12 |         |     |        |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ | tirage    | attaque | vie | degats |   | tirage    | attaque | vie | degats |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ |           |         |  25 |        |   |           |         |  20 |        |
+ | 1         |      16 |  25 |        |   | 4         | 16      |  20 |        |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+#+END_QUOTE
+
+
+** DONE le joueur remporte le round :
+   testRoundcombatJoueurGagneRound()
+
+ | joueur    |         |     |        |   | monstre  | Loup    |     |        |
+ | force: 15 |         |     |        |   | force: 5 |         |     |        |
+ |-----------+---------+-----+--------+---+----------+---------+-----+--------|
+ | tirage    | attaque | vie | degats |   | tirage   | attaque | vie | degats |
+ |-----------+---------+-----+--------+---+----------+---------+-----+--------|
+ |           |         |  25 |        |   |          |         |   3 |        |
+ | 4         |      16 |  25 |        |   | 10       | 15      |  -1 |     -4 |
+ |           |         |     |        |   |          |         |     |        |
+ |-----------+---------+-----+--------+---+----------+---------+-----+--------|
+
+
+
+** joueur gagne en 1 round :
+   testcombatJoueurGagneEn1Round()
+
+ | joueur    |         |     |        |   | monstre  | Loup    |     |        |
+ | force: 15 |         |     |        |   | force: 5 |         |     |        |
+ |-----------+---------+-----+--------+---+----------+---------+-----+--------|
+ | tirage    | attaque | vie | degats |   | tirage   | attaque | vie | degats |
+ |-----------+---------+-----+--------+---+----------+---------+-----+--------|
+ |           |         |  25 |        |   |          |         |  10 |        |
+ | 10        |      25 |  25 |        |   | 10       | 15      |   0 |    -10 |
+ |           |         |     |        |   |          |         |     |        |
+ |-----------+---------+-----+--------+---+----------+---------+-----+--------|
+
+
+
+** joueur gagne en 2 tours :
+
+
+
+ | joueur    |         |     |        |   | monstre   |   Troll |     |        |
+ | force: 15 |         |     |        |   | force: 12 |         |     |        |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ | tirage    | attaque | vie | degats |   | tirage    | attaque | vie | degats |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ |           |         |  25 |        |   |           |         |  20 |        |
+ | 10        |      25 |  25 |        |   | 5         |      17 |  12 |     -8 |
+ | 10        |      25 |  25 |        |   | 1         |      13 |   0 |    -12 |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+
+ score joueur = 5
+
+
+
+
+** monstre gagne en 2 tour :
+
+afficher le message : « Votre personnage est décédé. Il a obtenu le score de X points. Veuillez créer un nouveau personnage ».
+
+
+ | joueur    |         |     |        |   | monstre   |   Troll |     |        |
+ | force: 12 |         |     |        |   | force: 15 |         |     |        |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ | tirage    | attaque | vie | degats |   | tirage    | attaque | vie | degats |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ |           |         |  20 |        |   |           |         |  20 |        |
+ | 1         |      13 |   8 | - 12   |   | 10        |      25 |  12 |        |
+ | 1         |      25 |   0 | -8     |   | 6         |      13 |   0 |    -12 |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+
+
+
+
+* enchainement de plusieurs combats, score :
+
+
+** le joueur perd le premier combat : score = 0
+   afficher le score
+
+** le joueur gagne un combat contre un loup : score = 1
+
+** le joueur gagne un combat contre un gobelin : score = 2
+
+** le joueur gagne un combat contre un troll : score = 5
+
+** le joueur gagne un combat contre un loup, perd contre un troll : score = 1
+   afficher le score
+
+** le joueur gagne contre un loup, un gobelin, perd contre un troll : score = 3
+   afficher le score
