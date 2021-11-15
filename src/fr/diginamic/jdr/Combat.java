@@ -27,6 +27,12 @@ public class Combat {
 			return vainqueur;
 
 		}
+
+		roundCombat();
+		if (leCombatEstFini()) {
+			return vainqueur;
+		}
+
 		return vainqueur;
 	}
 

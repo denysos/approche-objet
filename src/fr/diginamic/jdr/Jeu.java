@@ -2,6 +2,13 @@ package fr.diginamic.jdr;
 
 import java.util.Random;
 
+
+/**
+ * 
+ * @author denis
+ *
+ */
+
 public class Jeu {
 
 	private Joueur joueur;

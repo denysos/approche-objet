@@ -3,6 +3,8 @@ package fr.diginamic.jdr;
 public abstract class Personnage {
 
 	protected int force = 0;
+
+
 	protected int pointsDeVie = 0;
 
 	public Personnage() {
@@ -31,6 +33,10 @@ public abstract class Personnage {
 
 	public int getPointsDeVie() {
 		return pointsDeVie;
+	}
+	
+	protected void setForce(int force) {
+		this.force = force;
 	}
 
 }

@@ -50,7 +50,7 @@ attaque = force + alea(1-10)
 
 
 
-** joueur gagne en 1 round :
+** DONE joueur gagne en 1 round :
    testcombatJoueurGagneEn1Round()
 
  | joueur    |         |     |        |   | monstre  | Loup    |     |        |
@@ -65,8 +65,8 @@ attaque = force + alea(1-10)
 
 
 
-** joueur gagne en 2 tours :
-
+** DONE joueur gagne en 2 rounds :
+   testcombatJoueurGagneEn2Rounds()
 
 
  | joueur    |         |     |        |   | monstre   |   Troll |     |        |
@@ -82,6 +82,23 @@ attaque = force + alea(1-10)
  score joueur = 5
 
 
+** DONE joueur gagne en 3 rounds :
+   testcombatJoueurGagneEn3Rounds()
+
+
+ |    joueur |         |     |        |   |   monstre |   Troll |     |        |
+ | force: 15 |         |     |        |   | force: 12 |         |     |        |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ |    tirage | attaque | vie | degats |   |    tirage | attaque | vie | degats |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ |           |         |  25 |        |   |           |         |  20 |        |
+ |        10 |      25 |  25 |        |   |         5 |      17 |  12 |     -8 |
+ |         1 |      16 |  19 |     -6 |   |        10 |      22 |     |        |
+ |        10 |      25 |  19 |        |   |         1 |      13 |   0 |    -12 |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+
+ score joueur = 5
+
 
 
 ** monstre gagne en 2 tour :
@@ -96,7 +113,7 @@ afficher le message : « Votre personnage est décédé. Il a obtenu le score de
  |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
  |           |         |  20 |        |   |           |         |  20 |        |
  | 1         |      13 |   8 | - 12   |   | 10        |      25 |  12 |        |
- | 1         |      25 |   0 | -8     |   | 6         |      13 |   0 |    -12 |
+ | 1         |      25 |   0 | -8     |   | 6         |      13 |  12 |        |
  |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
 
 
@@ -105,17 +122,73 @@ afficher le message : « Votre personnage est décédé. Il a obtenu le score de
 * enchainement de plusieurs combats, score :
 
 
-** le joueur perd le premier combat : score = 0
+** CANCELLED le joueur perd le premier combat : score = 0         :CANCELLED:
    afficher le score
 
-** le joueur gagne un combat contre un loup : score = 1
+** CANCELLED le joueur gagne un combat contre un loup : score = 1 :CANCELLED:
 
-** le joueur gagne un combat contre un gobelin : score = 2
+** CANCELLED le joueur gagne un combat contre un gobelin : score = 2 :CANCELLED:
 
-** le joueur gagne un combat contre un troll : score = 5
+** CANCELLED le joueur gagne un combat contre un troll : score = 5 :CANCELLED:
 
-** le joueur gagne un combat contre un loup, perd contre un troll : score = 1
+** DONE le joueur gagne un combat contre un Troll et gagne contre un troll : score = 1
    afficher le score
 
-** le joueur gagne contre un loup, un gobelin, perd contre un troll : score = 3
+
+ |    joueur |         |     |        |   |   monstre |   Troll |     |        |
+ | force: 15 |         |     |        |   | force: 12 |         |     |        |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ |    tirage | attaque | vie | degats |   |    tirage | attaque | vie | degats |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ |           |         |  25 |        |   |           |         |  20 |        |
+ |        10 |      25 |  25 |        |   |         4 |      16 |  11 |     -9 |
+ |         1 |      16 |  19 |     -6 |   |        10 |      22 |  11 |        |
+ |        10 |      25 |  19 |        |   |         1 |      13 |  -1 |    -12 |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+
+ score joueur = 5
+
+ |    joueur |         |     |        |   |   monstre |   Troll |     |        |
+ | force: 15 |         |     |        |   | force: 12 |         |     |        |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ |    tirage | attaque | vie | degats |   |    tirage | attaque | vie | degats |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ |           |         |  19 |        |   |           |         |  20 |        |
+ |        10 |      25 |  19 |        |   |         5 |      17 |  12 |     -8 |
+ |         2 |      16 |  14 |     -5 |   |        10 |      22 |     |        |
+ |        10 |      25 |  14 |        |   |         1 |      13 |   0 |    -12 |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+
+ score joueur = 10
+
+
+
+** le joueur gagne contre un Troll, perd contre un troll : score = 3
    afficher le score
+
+
+ |    joueur |         |     |        |   |   monstre |   Troll |     |        |
+ | force: 15 |         |     |        |   | force: 12 |         |     |        |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ |    tirage | attaque | vie | degats |   |    tirage | attaque | vie | degats |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ |           |         |  25 |        |   |           |         |  20 |        |
+ |        10 |      25 |  25 |        |   |         4 |      16 |  11 |     -9 |
+ |         1 |      16 |  19 |     -6 |   |        10 |      22 |  11 |        |
+ |        10 |      25 |  19 |        |   |         1 |      13 |  -1 |    -12 |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+
+ score joueur = 5
+
+ |    joueur |         |     |        |   |   monstre |   Troll |     |        |
+ | force: 15 |         |     |        |   | force: 15 |         |     |        |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ |    tirage | attaque | vie | degats |   |    tirage | attaque | vie | degats |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+ |           |         |  19 |        |   |           |         |  20 |        |
+ |         1 |      16 |  10 |     -9 |   |        10 |      25 |  20 |        |
+ |         1 |      16 |   5 |     -5 |   |         6 |      21 |  20 |        |
+ |         1 |      16 |  -4 |     -9 |   |        10 |      25 |  20 |        |
+ |-----------+---------+-----+--------+---+-----------+---------+-----+--------|
+
+ score joueur = 5
