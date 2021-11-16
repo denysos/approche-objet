@@ -50,24 +50,25 @@ public class TestListInt {
 
 		System.out.print("plus petit element : ");
 		System.out.println(min);
-		
+
 		System.out.println("affichage de la liste sans le min : ");
 		for (int i : listeEntiers) {
 			System.out.println(i);
 		}
-		
-		
+
 		System.out.println("liste des valeurs absolues :");
-		
-		for (Iterator iterator = listeEntiers.iterator(); iterator.hasNext();) {
-			Integer integer = (Integer) iterator.next();
-			if (integer < 0) {
-				min = integer;
-//				listeEntiers.set(min, integer.abs())
+
+		for (int i : listeEntiers) {
+			if (i < 0) {
+				listeEntiers.set(listeEntiers.indexOf(i), Math.abs(i));
 			}
+		}
+
+		for (int i : listeEntiers) {
+
+			System.out.println(i);
 
 		}
-		
 
 	}
 
