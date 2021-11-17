@@ -5,8 +5,8 @@ import java.util.Collection;
 import java.util.HashMap;
 
 /**
- * TP 12 HasMap exo 5
- * comptage des pays par continent
+ * TP 12 HasMap exo 5 comptage des pays par continent
+ * 
  * @author denis
  *
  */
@@ -30,10 +30,15 @@ public class ComptagePaysParContinent {
 
 		for (Pays pays : listeDesPays) {
 			String continent = pays.getContinent();
-//			int population = pays.getNbHabitants();
-			recencement.putIfAbsent(continent, 0);
-			int nbDePaysPrecedent = recencement.get(continent);
-			int nbDePays = nbDePaysPrecedent++;
+			int population = pays.getNbHabitants();
+//			recencement.putIfAbsent(continent, 0);
+			Integer nbDePaysPrecedent = recencement.get(continent);
+			if (nbDePaysPrecedent == null) {
+				nbDePaysPrecedent = 0;
+			}
+			
+			//attention, si on met nbDePaysPrecedent++, l'incrementation est faite après l'affectation !
+			int nbDePays = ++nbDePaysPrecedent;   
 			recencement.put(continent, nbDePays);
 
 		}
