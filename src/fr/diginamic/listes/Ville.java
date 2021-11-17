@@ -5,32 +5,33 @@ public class Ville implements Comparable<Ville> {
 	private String nom;
 	private int nbHab;
 
-	@Override
+//	@Override
 //	public int compareTo(Ville o) {
-//		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+//		return this.nom.compareTo(o.getNom());
 //
-//		if (this.nom.compareTo(o.getNom()) < 0) {
+////		if (this.nom.compareTo(o.getNom()) < 0) {
+////			return -1;
+////		}
+////
+////		if (this.nom.compareTo(o.getNom()) > 0) {
+////			return 1;
+////		}
+////		return 0;
+//	}
+	
+	@Override
+	public int compareTo(Ville o) {
+		// TODO Auto-generated method stub
+		return Integer.valueOf(this.nbHab).compareTo(Integer.valueOf(o.getNbHab()));
+//		if (Integer.valueOf(this.nbHab).compareTo(Integer.valueOf(o.getNbHab())) < 0) {
 //			return -1;
 //		}
 //
-//		if (this.nom.compareTo(o.getNom()) > 0) {
+//		if (Integer.valueOf(this.nbHab).compareTo(Integer.valueOf(o.getNbHab())) > 0) {
 //			return 1;
 //		}
 //		return 0;
-//	}
-	
-	
-	public int compareTo(Ville o) {
-		// TODO Auto-generated method stub
-
-		if (Integer.valueOf(this.nbHab).compareTo(Integer.valueOf(o.getNbHab())) < 0) {
-			return -1;
-		}
-
-		if (Integer.valueOf(this.nbHab).compareTo(Integer.valueOf(o.getNbHab())) > 0) {
-			return 1;
-		}
-		return 0;
 	}
 
 	public String getNom() {
