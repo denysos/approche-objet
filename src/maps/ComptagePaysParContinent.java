@@ -31,11 +31,11 @@ public class ComptagePaysParContinent {
 		for (Pays pays : listeDesPays) {
 			String continent = pays.getContinent();
 			int population = pays.getNbHabitants();
-//			recencement.putIfAbsent(continent, 0);
+			recencement.putIfAbsent(continent, 0);
 			Integer nbDePaysPrecedent = recencement.get(continent);
-			if (nbDePaysPrecedent == null) {
-				nbDePaysPrecedent = 0;
-			}
+//			if (nbDePaysPrecedent == null) {
+//				nbDePaysPrecedent = 0;
+//			}
 			
 			//attention, si on met nbDePaysPrecedent++, l'incrementation est faite après l'affectation !
 			int nbDePays = ++nbDePaysPrecedent;   
