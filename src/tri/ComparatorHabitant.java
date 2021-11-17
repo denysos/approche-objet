@@ -2,7 +2,7 @@ package tri;
 
 import java.util.Comparator;
 
-import fr.diginamic.listes.Ville;
+//import fr.diginamic.listes.Ville;
 
 public class ComparatorHabitant implements Comparator<Ville>{
 

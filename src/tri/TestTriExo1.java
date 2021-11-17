@@ -3,7 +3,7 @@ package tri;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import fr.diginamic.listes.Ville;
+//import fr.diginamic.listes.Ville;
 
 /**
  * tp 13-tri - exo 1 - exo 2
