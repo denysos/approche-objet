@@ -53,6 +53,10 @@ public class Application {
 				RecherchePopulationDepartement rechercheDepartement = new RecherchePopulationDepartement(recensement);
 				rechercheDepartement.traiter();
 				break;
+			case 3:
+				RecherchePopulationRegion rechercheRegion = new RecherchePopulationRegion(recensement);
+				rechercheRegion.traiter();
+				break;
 			case 9:
 				System.out.println("good bye !");
 				System.exit(0);

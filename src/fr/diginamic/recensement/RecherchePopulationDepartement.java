@@ -11,7 +11,7 @@ public class RecherchePopulationDepartement extends MenuService {
 		this.recensement = recensement;
 	}
 
-	private HashMap<String, Integer> tableauPopulationDepartement = new HashMap<>();
+//	private HashMap<String, Integer> tableauPopulationDepartement = new HashMap<>();
 	private Departement departementRecherche;
 
 	@Override
