@@ -50,8 +50,8 @@ public class Application {
 				break;
 
 			case 2:
-				RecherchePopulationDepartement rechercheDeprtement = new RecherchePopulationDepartement(recensement);
-				rechercheDeprtement.traiter();
+				RecherchePopulationDepartement rechercheDepartement = new RecherchePopulationDepartement(recensement);
+				rechercheDepartement.traiter();
 				break;
 			case 9:
 				System.out.println("good bye !");

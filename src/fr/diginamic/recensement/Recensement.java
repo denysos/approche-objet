@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Recensement {
-//	private Ville ville;
 	final int CODEREGION = 0;
 	final int NOMREGION = 1;
 	final int CODEDEPARTEMENT = 2;
@@ -27,7 +26,8 @@ public class Recensement {
 	public Ville rechercheVille(String villeRecherchee) {
 		Ville resultat = null;
 		for (Ville ville : listeVilles) {
-			if (ville.getNomCommune().toLowerCase().equals(villeRecherchee.toLowerCase())) {
+			Boolean villeMatch = ville.getNomCommune().toLowerCase().equals(villeRecherchee.toLowerCase());
+			if (villeMatch) {
 				return ville;
 			}
 		}
@@ -40,14 +40,6 @@ public class Recensement {
 		// rechercher le departement dans la HashMap
 		Departement departement = tableDepartements.get(codeDepartement);
 
-//		for (Departement departement : tableDepartements) {
-//			if (departement.getCodeDepartement().equals(codeDepartement)) {
-//				return new Departement(codeDepartement, departement.getPopulationTotale());
-////				return new Departement(codeDepartement,
-////						Integer.parseInt(ville.getPopulationTotale().replaceAll(" ", "")));
-//
-//			}
-//		}
 		return departement;
 
 	}
@@ -55,7 +47,7 @@ public class Recensement {
 	private void aggregationPopulationDepartements(ArrayList<Ville> listeVilles) {
 
 		for (Ville ville : listeVilles) {
-			int population = Integer.parseInt(ville.getPopulationTotale().replaceAll(" ", ""));
+			int population = nettoyageStrNumber(ville.getPopulationTotale());
 			String codeDepartement = ville.getCodeDepartement();
 			Departement departement = new Departement(codeDepartement, 0);
 			tableDepartements.putIfAbsent(codeDepartement, departement);
@@ -64,4 +56,9 @@ public class Recensement {
 			tableDepartements.put(codeDepartement, new Departement(codeDepartement, populationCalculee));
 		}
 	}
+	
+	private Integer nettoyageStrNumber(String nbStr) {
+		return Integer.parseInt(nbStr.replaceAll(" ", ""));
+	}
+	
 }
