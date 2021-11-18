@@ -9,18 +9,18 @@ import java.util.Scanner;
 
 public class Application {
 
-	public static void main(String[] args)throws IOException {
+	public static void main(String[] args) throws IOException {
 		// chargement du fichier :
-		
-		Path fichierRecensement = Paths.get("d:/workspace-spring-diginamic/approche-objet/src/fr/diginamic/recensement/recensement.csv");
+
+		Path fichierRecensement = Paths
+				.get("d:/workspace-spring-diginamic/approche-objet/src/fr/diginamic/recensement/recensement.csv");
 		List<String> linesFichierRecensement = Files.readAllLines(fichierRecensement);
 		Recensement recensement = new Recensement();
-		for (String line : linesFichierRecensement) {
-			recensement.ajouteVille(line);
+
+		for (int i = 1; i < linesFichierRecensement.size(); i++) {
+			recensement.ajouteVille(linesFichierRecensement.get(i));
+
 		}
-		
-		
-		
 
 		System.out.println();
 		System.out.println("votre choix : ");
@@ -41,17 +41,17 @@ public class Application {
 //		int nb = scanner.nextInt();
 
 		while (true) {
-		int	nb = scanner.nextInt();
+			int nb = scanner.nextInt();
 
 			switch (nb) {
 			case 1:
-				RecherchePopulationVille recherche = new RecherchePopulationVille(recensement);
-				recherche.traiter();
+				RecherchePopulationVille rechercheVille = new RecherchePopulationVille(recensement);
+				rechercheVille.traiter();
 				break;
-				
+
 			case 2:
-				RecherchePopulationDepartement recherche = new RecherchePopulationDepartement(recensement);
-				recherche.traiter();
+				RecherchePopulationDepartement rechercheDeprtement = new RecherchePopulationDepartement(recensement);
+				rechercheDeprtement.traiter();
 				break;
 			case 9:
 				System.out.println("good bye !");
