@@ -28,17 +28,17 @@ public class RecherchePopulationDepartement extends MenuService {
 			afficherPopDepartement();
 		}
 	}
-	
+
 	private void afficherPopDepartement() {
-		String nomVille = departementRecherche.getCodeDepartement();
+		String codeDepartement = departementRecherche.getCodeDepartement();
 		int populationDepartement = departementRecherche.getPopulationTotale();
-		System.out.println("[" + nomVille + "] : " + populationDepartement + " Habitants");
+		System.out.println("[" + codeDepartement + "] : " + populationDepartement + " Habitants");
 
 	}
 
 	public Departement rechercher(String codeDepartement) {
-	Departement departement =	recensement.recherchePopulationDepartement(codeDepartement);
-		
+		Departement departement = recensement.recherchePopulationDepartement(codeDepartement);
+
 		return departement;
 	}
 

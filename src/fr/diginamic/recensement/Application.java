@@ -57,6 +57,12 @@ public class Application {
 				RecherchePopulationRegion rechercheRegion = new RecherchePopulationRegion(recensement);
 				rechercheRegion.traiter();
 				break;
+				
+			case 5:
+				RecherchePopulation10DepPlusPeuples recherche10DepartementsPlusPeuples = new RecherchePopulation10DepPlusPeuples(recensement, 10);
+				recherche10DepartementsPlusPeuples.traiter();
+				break;
+				
 			case 9:
 				System.out.println("good bye !");
 				System.exit(0);
