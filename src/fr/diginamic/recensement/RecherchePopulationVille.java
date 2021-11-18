@@ -37,7 +37,7 @@ public class RecherchePopulationVille extends MenuService {
 	public Ville rechercher(String villeRecherchee) {
 		Ville resultat = null;
 
-		resultat = recensement.recherche(villeRecherchee);
+		resultat = recensement.rechercheVille(villeRecherchee);
 
 		return resultat;
 	}

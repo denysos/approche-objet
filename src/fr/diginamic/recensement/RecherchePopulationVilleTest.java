@@ -2,7 +2,7 @@ package fr.diginamic.recensement;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.HashMap;
+//import java.util.HashMap;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

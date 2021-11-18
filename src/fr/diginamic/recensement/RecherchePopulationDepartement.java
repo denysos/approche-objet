@@ -20,8 +20,10 @@ public class RecherchePopulationDepartement extends MenuService {
 		String requeteCodeDepartement = scanner.next();
 	}
 
-	private int recherchePopDepartement(String codeDepartement, HashMap tableauPopulation) {
-		return 0;
+	public int rechercher(String codeDepartement) {
+	Departement departement =	recensement.recherchePopulationDepartement(codeDepartement);
+		
+		return departement.getPopulationTotale();
 	}
 
 }
