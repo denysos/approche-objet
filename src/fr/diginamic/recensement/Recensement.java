@@ -2,6 +2,7 @@ package fr.diginamic.recensement;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Recensement {
 	final int CODEREGION = 0;
@@ -52,11 +53,12 @@ public class Recensement {
 
 	}
 
-	public Departement[] recherchePopulation10DepartementsPlusPeuples(int nbDepAAfficher) {
+	public List <Departement> recherchePopulation10DepartementsPlusPeuples(int nbDepAAfficher) {
 		if (recensementDepartement == null) {
 			recensementDepartement = new RecensementDepartement(listeVilles);
 		}
-		return recensementDepartement.recherchePopulationDepartementsPlusPeuples(nbDepAAfficher);
+		List <Departement> listeDepartements = recensementDepartement.recherchePopulationDepartementsPlusPeuples(nbDepAAfficher);
+		return listeDepartements;
 
 	}
 

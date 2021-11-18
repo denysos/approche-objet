@@ -1,11 +1,12 @@
 package fr.diginamic.recensement;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class RecherchePopulation10DepPlusPeuples extends MenuService {
 	private Recensement recensement;
 	private int nbDepAAfficher;
-	private Departement[] departementsRecherches;
+	private List<Departement> departementsRecherches;
 
 	public RecherchePopulation10DepPlusPeuples(Recensement recensement, int nbDepAAfficher) {
 		super();
@@ -22,17 +23,17 @@ public class RecherchePopulation10DepPlusPeuples extends MenuService {
 		afficherPopDepartement();
 	}
 
-	public Departement[] rechercher(int nbDepAAfficher) {
-		Departement[] departements = recensement.recherchePopulation10DepartementsPlusPeuples(nbDepAAfficher);
+	public List <Departement> rechercher(int nbDepAAfficher) {
+		List <Departement> departements = recensement.recherchePopulation10DepartementsPlusPeuples(nbDepAAfficher);
 		return departements;
 	}
 
 	private void afficherPopDepartement() {
 
-		for (int i = 0; i < departementsRecherches.length; i++) {
+		for (int i = 0; i < departementsRecherches.size(); i++) {
 
-			String codeDepartement = departementsRecherches[i].getCodeDepartement();
-			int populationDepartement = departementsRecherches[i].getPopulationTotale();
+			String codeDepartement = departementsRecherches.get(i).getCodeDepartement();
+			int populationDepartement = departementsRecherches.get(i).getPopulationTotale();
 			System.out.println("[" + codeDepartement + "] : " + populationDepartement + " Habitants");
 		}
 

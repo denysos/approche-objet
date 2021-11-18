@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 public class RecensementDepartement {
@@ -27,7 +28,13 @@ public class RecensementDepartement {
 	}
 
 	public List<Departement> recherchePopulationDepartementsPlusPeuples(int nbDepAAfficher) {
-		List<Departement> departements = (List) tableDepartements.values();
+		List<Departement> departements = Collections.emptyList();
+//		Collection <Departement> departements;
+//		Iterator<Departement>  departementsIter = tableDepartements.values().iterator();
+		for (Departement departement : tableDepartements.values()) {
+			departements.add(departement);
+		}
+		
 		Collections.sort(departements);
 
 //		List<Departement> departementsTries = Collections.sort(List<Departement> tableDepartements.values()); 
