@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
-public class Application {
+public class ApplicationRecensement {
 
 	public static void main(String[] args) throws IOException {
 		// chargement du fichier :

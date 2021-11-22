@@ -18,6 +18,7 @@ public class Departement implements Comparable<Departement> {
 		return populationTotale;
 	}
 
+//	@Override
 	public Boolean equals(Departement departement) {
 		return this.codeDepartement == departement.getCodeDepartement();
 
@@ -27,8 +28,7 @@ public class Departement implements Comparable<Departement> {
 	public int compareTo(Departement autreDep) {
 		Integer ceDepPop = this.populationTotale;
 		Integer autreDepPop = autreDep.populationTotale;
-		ceDepPop.compareTo(autreDepPop);
-		return 0;
+		return -1 * ceDepPop.compareTo(autreDepPop);
 	}
 
 }

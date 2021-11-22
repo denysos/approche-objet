@@ -27,18 +27,24 @@ public class RecensementDepartement {
 
 	}
 
-	public List<Departement> recherchePopulationDepartementsPlusPeuples(int nbDepAAfficher) {
-		List<Departement> departements = Collections.emptyList();
-//		Collection <Departement> departements;
-//		Iterator<Departement>  departementsIter = tableDepartements.values().iterator();
+	public Departement[] recherchePopulationDepartementsPlusPeuples(int nbDepAAfficher) {
+//		List<Departement> departements = Collections.emptyList();
+		int dimTableDepartements = tableDepartements.size();
+		Departement[] departements = new Departement[dimTableDepartements];
+
+		int i = 0;
 		for (Departement departement : tableDepartements.values()) {
-			departements.add(departement);
+			departements[i] = departement;
+			i++;
 		}
-		
-		Collections.sort(departements);
+
+		Arrays.sort(departements);
 
 //		List<Departement> departementsTries = Collections.sort(List<Departement> tableDepartements.values()); 
-		return departements.subList(0, nbDepAAfficher - 1);
+//		return Arrays.copyOf(departements, nbDepAAfficher);
+//		return Arrays.copyOfRange(departements, dimTableDepartements - 1 - nbDepAAfficher, dimTableDepartements - 1);
+		return Arrays.copyOfRange(departements, 0, nbDepAAfficher); // borne sup exclue !!!
+
 
 	}
 

@@ -53,11 +53,11 @@ public class Recensement {
 
 	}
 
-	public List <Departement> recherchePopulation10DepartementsPlusPeuples(int nbDepAAfficher) {
+	public Departement[] recherchePopulation10DepartementsPlusPeuples(int nbDepAAfficher) {
 		if (recensementDepartement == null) {
 			recensementDepartement = new RecensementDepartement(listeVilles);
 		}
-		List <Departement> listeDepartements = recensementDepartement.recherchePopulationDepartementsPlusPeuples(nbDepAAfficher);
+		Departement[] listeDepartements = recensementDepartement.recherchePopulationDepartementsPlusPeuples(nbDepAAfficher);
 		return listeDepartements;
 
 	}
