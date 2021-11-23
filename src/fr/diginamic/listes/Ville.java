@@ -7,7 +7,7 @@ public class Ville implements Comparable<Ville> {
 
 //	@Override
 //	public int compareTo(Ville o) {
-		// TODO Auto-generated method stub
+	// TODO Auto-generated method stub
 //		return this.nom.compareTo(o.getNom());
 //
 ////		if (this.nom.compareTo(o.getNom()) < 0) {
@@ -19,7 +19,7 @@ public class Ville implements Comparable<Ville> {
 ////		}
 ////		return 0;
 //	}
-	
+
 	@Override
 	public int compareTo(Ville o) {
 		// TODO Auto-generated method stub
@@ -54,6 +54,28 @@ public class Ville implements Comparable<Ville> {
 		super();
 		this.nom = nom;
 		this.nbHab = nbHab;
+	}
+
+	@Override
+	public boolean equals(Object object) {
+		
+		// tester le type du parametre :
+		if (!(object instanceof Ville)) {
+			return false;
+		}
+		
+		// caster le type Ville sur le parametre :
+		Ville other = (Ville) object;
+		
+		
+		// faire la comparaison :
+		return nom.equals(other.getNom()) && nbHab == other.getNbHab();
+
+	}
+
+	@Override
+	public String toString() {
+		return "Ville [nom=" + nom + ", nbHab=" + nbHab + "]";
 	}
 
 }
