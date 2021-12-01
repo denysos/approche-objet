@@ -32,11 +32,7 @@ public class RecensementDepartement {
 		int dimTableDepartements = tableDepartements.size();
 		Departement[] departements = new Departement[dimTableDepartements];
 
-		int i = 0;
-		for (Departement departement : tableDepartements.values()) {
-			departements[i] = departement;
-			i++;
-		}
+		departementHashMapToArray(departements);
 
 		Arrays.sort(departements);
 
@@ -46,6 +42,21 @@ public class RecensementDepartement {
 		return Arrays.copyOfRange(departements, 0, nbDepAAfficher); // borne sup exclue !!!
 
 
+	}
+
+	private void departementHashMapToArray(Departement[] departements) {
+		int i = 0;
+		for (Departement departement : tableDepartements.values()) {
+			departements[i] = departement;
+			i++;
+		}
+	}
+	
+	private Departement[] departementHashMapToArray2(Departement[] departements) {
+		
+		Collection<Departement> values =  tableDepartements.values();
+		Departement[] departementssss = values.toArray(new Departement[0]); 
+		return departementssss;
 	}
 
 	private void aggregationPopulationDepartements(ArrayList<Ville> listeVilles) {

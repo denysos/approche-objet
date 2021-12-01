@@ -19,8 +19,12 @@ public class Departement implements Comparable<Departement> {
 	}
 
 //	@Override
-	public Boolean equals(Departement departement) {
-		return this.codeDepartement == departement.getCodeDepartement();
+	public boolean equals(Object object) {
+		if (!(object instanceof Departement)) {
+			return false;
+		}
+		Departement other = (Departement) object;
+		return codeDepartement.equals(other.getCodeDepartement()) && populationTotale == other.getPopulationTotale();
 
 	}
 

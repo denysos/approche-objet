@@ -33,6 +33,7 @@ public class ApplicationRecensement {
 		System.out.println("6. Afficher les 10 villes les plus peuplées d’un département");
 		System.out.println("7. Afficher les 10 villes les plus peuplées d’une région");
 		System.out.println("8. Afficher les 10 villes les plus peuplées de France");
+		System.out.println("14. recherche population borne service");
 		System.out.println("9. Sortir");
 
 		System.out.println();
@@ -43,36 +44,57 @@ public class ApplicationRecensement {
 		while (true) {
 			int nb = scanner.nextInt();
 
-			switch (nb) {
-			case 1:
-				RecherchePopulationVille rechercheVille = new RecherchePopulationVille(recensement);
-				rechercheVille.traiter();
-				break;
+			try {
 
-			case 2:
-				RecherchePopulationDepartement rechercheDepartement = new RecherchePopulationDepartement(recensement);
-				rechercheDepartement.traiter();
-				break;
-			case 3:
-				RecherchePopulationRegion rechercheRegion = new RecherchePopulationRegion(recensement);
-				rechercheRegion.traiter();
-				break;
-				
-			case 5:
-				RecherchePopulation10DepPlusPeuples recherche10DepartementsPlusPeuples = new RecherchePopulation10DepPlusPeuples(recensement, 10);
-				recherche10DepartementsPlusPeuples.traiter();
-				break;
-				
-			case 9:
-				System.out.println("good bye !");
-				System.exit(0);
-				break;
+				switch (nb) {
+				case 1:
+					RecherchePopulationVille rechercheVille = new RecherchePopulationVille(recensement);
+					rechercheVille.traiter();
+					break;
 
-			default:
-				System.out.println("good bye !");
-				System.exit(0);
-				break;
+				case 2:
+					RecherchePopulationDepartement rechercheDepartement = new RecherchePopulationDepartement(
+							recensement);
+					rechercheDepartement.traiter();
+					break;
+				case 3:
+					RecherchePopulationRegion rechercheRegion = new RecherchePopulationRegion(recensement);
+					rechercheRegion.traiter();
+					break;
+
+				case 5:
+					RecherchePopulation10DepPlusPeuples recherche10DepartementsPlusPeuples = new RecherchePopulation10DepPlusPeuples(
+							recensement, 10);
+					recherche10DepartementsPlusPeuples.traiter();
+					break;
+
+//				case 6:
+//					RecherchePopulation10VillesPlusPeupleesDep recherchePopulation10VillesPlusPeupleesDep = new RecherchePopulation10VillesPlusPeupleesDep(
+//							recensement, 10);
+//					recherche10DepartementsPlusPeuples.traiter();
+//					break;
+
+				case 9:
+					System.out.println("good bye !");
+					System.exit(0);
+					break;
+
+				case 14:
+					RecherchePopulationBorneService recherchePopulationBorneService = new RecherchePopulationBorneService(
+							recensement);
+					recherchePopulationBorneService.traiter();
+					break;
+
+				default:
+					System.out.println("good bye !");
+					System.exit(0);
+					break;
+
+				}
+			} catch (Exception e) {
+				System.out.println("un probleme s'est produit : " + e);
 			}
+
 		}
 	}
 
