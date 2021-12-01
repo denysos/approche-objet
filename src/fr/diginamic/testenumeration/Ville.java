@@ -37,7 +37,7 @@ public class Ville implements Comparable<Ville> {
 		
 		
 		// faire la comparaison :
-		return nom.equals(other.getNom()) && nbHab == other.getNbHab();
+		return nom.equals(other.getNom()) && nbHab == other.getNbHab() && continent.equals(other.getContinent());
 
 	}
 

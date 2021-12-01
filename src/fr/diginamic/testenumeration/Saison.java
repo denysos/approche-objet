@@ -11,11 +11,11 @@ public enum Saison {
 		this.libelle = libelle;
 		this.ordre = ordre;
 	}
-	
-	
-	public static Saison coucouSaison(String libelle) {
 
-		for (Saison saison : Saison.values()) {
+	public static Saison coucouSaison(String libelle) {
+		
+			Saison[] saisonsss = Saison.values();
+		for (Saison saison : saisonsss) {
 			if (saison.getLibelle().equals(libelle)) {
 				return saison;
 
@@ -25,13 +25,10 @@ public enum Saison {
 		return null;
 
 	}
-	
 
 	public String getLibelle() {
 		return libelle;
 	}
-
-
 
 	public int getOrdre() {
 		return ordre;

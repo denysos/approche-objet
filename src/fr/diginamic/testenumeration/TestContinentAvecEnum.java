@@ -5,9 +5,10 @@ import java.util.List;
 
 public class TestContinentAvecEnum {
 
-	public static void main(String[] args) {
+	public static void main(String... args) {
 
-		final ArrayList<Ville> villesContinents = new ArrayList<>();
+		List<Ville> villesContinents = new ArrayList<>();
+		
 		villesContinents.add(new Ville("New York", 1_000_000, Continents.AMERIQUE));
 		villesContinents.add(new Ville("Paris", 1_000_001, Continents.EUROPE));
 		villesContinents.add(new Ville("Pekin", 1_000_002, Continents.ASIE));
